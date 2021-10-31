@@ -5,10 +5,8 @@
   <section>
     <article>
       {{#each this.model as |product|}}
-        <h3>{{product.name}}</h3>
+       <Product @productInfo={{product}}/>
       {{/each}}
-      <Product />
-      <Product />
     </article>
   </section>
 </main>

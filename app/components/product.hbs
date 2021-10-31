@@ -1,3 +1,7 @@
-<LinkTo @route='product' @model='1'>
-Product 1
+<LinkTo @route='product' @model={{@productInfo.id}}>
+  <article>
+    <p>{{@productInfo.name}}</p>
+    <p>{{@productInfo.price}}</p>
+  </article>
 </LinkTo>
+<button {{on 'click' this.addProduct}}>Add</button>

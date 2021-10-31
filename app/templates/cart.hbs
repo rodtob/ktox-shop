@@ -1,11 +1,10 @@
 caaart
 <section>
+  {{#each this.cart.productsList as |selectedProducts|}}
   <article>
-    <p>Product1</p>
+    <p>{{selectedProducts.name}}</p>
   </article>
-  <article>
-    <p>Product2</p>
-  </article>
+  {{/each}}
 </section>
 
 <section>
