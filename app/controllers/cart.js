@@ -24,4 +24,8 @@ export default class CartController extends Controller {
   addProductCount(product, event) {
     product.count = event.target.value >= 0 ? event.target.value : 0;
   }
+  @action
+  removeProduct(product) {
+    this.cart.removeProductFromCart(product);
+  }
 }

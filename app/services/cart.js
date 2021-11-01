@@ -40,4 +40,9 @@ export default class CartService extends Service {
       this.productsList = [...this.productsList, productWithCounter];
     }
   }
+  removeProductFromCart(product) {
+    const newProductList = this.productsList.filter((e) => e.id !== product.id);
+    this.productsList = [...newProductList];
+    console.log(this.productsList);
+  }
 }

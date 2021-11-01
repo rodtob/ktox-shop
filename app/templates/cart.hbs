@@ -6,7 +6,7 @@
       <img class="img-detail" src={{selectedProduct.image}} alt={{selectedProduct.image}}/>
       <p>{{selectedProduct.name}}</p>
       <input class="input-product" type="number" min="0" value={{selectedProduct.count}} {{on 'input' (fn this.addProductCount selectedProduct)}}>
-      <p>x</p>
+      <p {{on 'click' (fn this.removeProduct selectedProduct)}}>X</p>
     </article>
     {{/each}}
   </section>
