@@ -6,11 +6,15 @@ export default class CartController extends Controller {
   @service cart;
   get itemsAmount() {
     return this.cart.productsList.reduce((accumulated, product) => {
-      return parseInt(accumulated) + parseInt(product.count);
+      return parseFloat(accumulated) + parseFloat(product.count);
     }, 0);
   }
   get total() {
-    return this.model.total;
+    return this.cart.productsList.reduce((accumulated, product) => {
+      return (
+        parseFloat(accumulated) + parseFloat(product.count) * product.price
+      );
+    }, 0);
   }
   @action
   addProductCount(product, event) {

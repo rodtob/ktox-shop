@@ -1,8 +1,10 @@
+<article class="article-product">
 <LinkTo @route='product' @model={{@productInfo.id}}>
+  <img class="img-product" src={{@productInfo.img}}/>
+</LinkTo>
   <article>
     <p>{{@productInfo.name}}</p>
     <p>{{@productInfo.price}}</p>
   </article>
-  <img class="img-product" src={{@productInfo.img}}/>
-</LinkTo>
 <button {{on 'click' this.addProduct}}>Add</button>
+</article>

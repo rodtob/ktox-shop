@@ -1,12 +1,10 @@
 <LinkTo @route='cart'>Cart</LinkTo>
 
-<main>
+<main class='main-container'>
   <h1>KtoxShop</h1>
-  <section>
-    <article>
+  <section class="section-products">
       {{#each this.model as |product|}}
        <Product @productInfo={{product}}/>
       {{/each}}
-    </article>
   </section>
 </main>

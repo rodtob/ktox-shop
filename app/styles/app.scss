@@ -1,8 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Podkova&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  color: whitesmoke;
+  -webkit-appearance: none;
+}
+
 body{
   background-color: rgb(19, 19, 19);
-  color: azure;
+  font-family: 'Podkova', serif;
+}
+
+.main-container{
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
 }
 
 .img-product{
-  width: 200px;
+  width: 15vh;
+}
+
+.section-products{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.article-product{
+  background-color: blueviolet;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  border-radius: 15px;
+  width: 40vh;
+  height: 40vh;
 }
