@@ -12,8 +12,12 @@ export default class CartController extends Controller {
   get total() {
     return this.cart.productsList.reduce((accumulated, product) => {
       return (
-        (Math.round((parseFloat(accumulated) + parseFloat(product.count) * product.price) * 100) / 100).toFixed(2)
-      );
+        Math.round(
+          (parseFloat(accumulated) +
+            parseFloat(product.count) * product.price) *
+            100
+        ) / 100
+      ).toFixed(2);
     }, 0);
   }
   @action

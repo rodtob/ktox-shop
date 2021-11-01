@@ -44,9 +44,18 @@ body{
   }
 }
 
+.img-detail{
+  width: 7vh;
+  background-color: rgb(136, 136, 136);
+  -webkit-filter: drop-shadow(2px 2px 2px #222);
+  filter: drop-shadow(2px 2px 2px #222);
+  border-radius: 1px;
+  margin-right: 20px;
+}
 
 .section-products{
   width: 80%;
+  margin: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,6 +86,47 @@ body{
 }
 .info-detail{
   margin: 0;
+}
+
+.cart{
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 2vh;
+  width: 80%;
+  min-height: 60vh;
+  background-color: rgb(206, 206, 206);
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
+}
+
+.products-cart{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 98%;
+}
+
+.product-cart{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 12px;
+  width: 100%;
+  height: 10vh;
+  background-color: rgba(175, 169, 169, 0.534);
+}
+
+.purchase-cart{
+  padding-left: 10px;
+}
+
+.input-product{
+  margin-left: auto;
+  margin-right: 20px;
 }
 
 @import "ember-bootstrap/bootstrap";

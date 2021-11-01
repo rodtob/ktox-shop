@@ -1,17 +1,21 @@
-<div class="main-container">
-  <section>
+
+<div class="cart">
+  <section class="products-cart">
     {{#each this.cart.productsList as |selectedProduct|}}
-    <article>
+    <article class="product-cart">
+      <img class="img-detail" src={{selectedProduct.image}} alt={{selectedProduct.image}}/>
       <p>{{selectedProduct.name}}</p>
-      <input type="number" min="0" value={{selectedProduct.count}} {{on 'input' (fn this.addProductCount selectedProduct)}}>
+      <input class="input-product" type="number" min="0" value={{selectedProduct.count}} {{on 'input' (fn this.addProductCount selectedProduct)}}>
+      <p>x</p>
     </article>
     {{/each}}
   </section>
 
   <section>
-    <article>
+    <article class="purchase-cart">
       <p>Total items {{this.itemsAmount}}</p>
       <p>Total {{this.total}}</p>
     </article>
   </section>
-</div>
+  </div>
+
