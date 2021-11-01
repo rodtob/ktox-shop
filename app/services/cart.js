@@ -15,6 +15,15 @@ class cartProduct {
 export default class CartService extends Service {
   @tracked productsList = [];
 
+  greenTeaOffer(product){
+    if(product.id === 'GR1'){
+      let greenTea = this.productsList.find((e)=> e.id === product.id)
+      greenTea.count += 1;
+      greenTea.price = 1.55;
+      console.log(this.productsList)
+    }
+  }
+
   addProductToCart(product) {
     const productInList = this.productsList.find((e) => e.id === product.id);
     if (productInList) {

@@ -15,5 +15,6 @@ export default class CartController extends Controller {
   @action
   addProductCount(product, event) {
     product.count = event.target.value >= 0 ? event.target.value : 0;
+    this.cart.greenTeaOffer(product);
   }
 }
