@@ -1,14 +1,19 @@
 import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
+import { action } from '@ember/object';
 
 export default class CartController extends Controller {
   @service cart;
   get itemsAmount() {
-    return this.model.reduce((accumulated, product) => {
-      return accumulated + product.amount;
+    return this.cart.productsList.reduce((accumulated, product) => {
+      return parseInt(accumulated) + parseInt(product.count);
     }, 0);
   }
   get total() {
     return this.model.total;
+  }
+  @action
+  addProductCount(product, event) {
+    product.count = event.target.value >= 0 ? event.target.value : 0;
   }
 }

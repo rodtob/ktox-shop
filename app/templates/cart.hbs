@@ -1,8 +1,8 @@
-caaart
 <section>
-  {{#each this.cart.productsList as |selectedProducts|}}
+  {{#each this.cart.productsList as |selectedProduct|}}
   <article>
-    <p>{{selectedProducts.name}}</p>
+    <p>{{selectedProduct.name}}</p>
+    <input type="number" min="0" value={{selectedProduct.count}} {{on 'input' (fn this.addProductCount selectedProduct)}}>
   </article>
   {{/each}}
 </section>
