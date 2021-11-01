@@ -6,13 +6,11 @@
   padding: 0;
   text-decoration: none;
   list-style: none;
-  color: whitesmoke;
   -webkit-appearance: none;
 }
 
 body{
-  background-color: rgb(19, 19, 19);
-  font-family: 'Podkova', serif;
+  font-family: 'Podkova', serif !important; 
 }
 
 .main-container{
@@ -20,12 +18,32 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 90vh;
+  min-height: 92vh;
+  background-color: rgb(96, 75, 116);
+}
+
+.title{
+  font-size: 4vh;
+  color: rgb(172, 172, 172);
+}
+
+.navbar{
+  height: 8vh;
 }
 
 .img-product{
-  width: 15vh;
+  margin-top: 7vh;
+  width: 20vh;
+  opacity: 0.9;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
+  transition: all .5s;
+  &:hover{
+    opacity: 1;
+    width: 22vh;
+  }
 }
+
 
 .section-products{
   width: 80%;
@@ -35,13 +53,30 @@ body{
 }
 
 .article-product{
-  background-color: blueviolet;
+  background-color: rgb(118, 47, 185);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin: 20px;
   border-radius: 15px;
   width: 40vh;
   height: 40vh;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
 }
+
+.product-info{
+  margin-bottom: 2vh;
+  display: flex;
+  width: 100%;
+  height: 6vh;
+  justify-content: space-around;
+  align-items: center;
+  background-color: bisque;
+}
+.info-detail{
+  margin: 0;
+}
+
+@import "ember-bootstrap/bootstrap";

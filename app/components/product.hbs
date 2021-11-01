@@ -2,9 +2,9 @@
 <LinkTo @route='product' @model={{@productInfo.id}}>
   <img class="img-product" src={{@productInfo.img}}/>
 </LinkTo>
-  <article>
-    <p>{{@productInfo.name}}</p>
-    <p>{{@productInfo.price}}</p>
+  <article class="product-info">
+    <p class="info-detail">{{@productInfo.name}}</p>
+    <p class="info-detail">{{@productInfo.price}}</p>
+    <button {{on 'click' this.addProduct}} class="btn btn-primary btn-sm">Add</button>
   </article>
-<button {{on 'click' this.addProduct}}>Add</button>
 </article>
