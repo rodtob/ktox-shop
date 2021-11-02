@@ -2,5 +2,8 @@
   <LinkTo class="navbar-brand" @route='index'>
     <h1 class="title">KtoxShop</h1>
   </LinkTo>
-  <LinkTo class="navbar-brand" @route='cart'>Cart {{this.itemCount}}</LinkTo>
+  <LinkTo class="cart-container" @route='cart'>
+    <img class="cart-icon" src={{'/shopping-cart.png'}}/>
+    <p class="x" >{{this.itemCount}}</p>
+  </LinkTo>
 </nav>

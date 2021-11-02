@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Podkova&display=swap');
+@import "ember-bootstrap/bootstrap";
 
 * {
   box-sizing: border-box;
@@ -7,6 +8,10 @@
   text-decoration: none;
   list-style: none;
   -webkit-appearance: none;
+}
+
+p{
+  margin-bottom: 0;
 }
 
 body{
@@ -25,6 +30,12 @@ body{
 .title{
   font-size: 4vh;
   color: rgb(172, 172, 172);
+  letter-spacing: 2px;  
+  transition: .3s all;
+  &:hover{
+    letter-spacing:4px; 
+    color: rgb(177, 177, 216);
+  }
 }
 
 .navbar{
@@ -62,7 +73,7 @@ body{
 }
 
 .article-product{
-  background-color: rgb(118, 47, 185);
+  background-color: rgb(49, 85, 128);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -94,7 +105,7 @@ body{
   justify-content: space-between;
   flex-direction: column;
   padding: 2vh;
-  width: 80%;
+  width: 52%;
   min-height: 60vh;
   background-color: rgb(206, 206, 206);
   -webkit-filter: drop-shadow(5px 5px 5px #222);
@@ -125,17 +136,61 @@ body{
 }
 
 .input-product{
+  width: 50px;
+  height: 30px;
+  padding: 0px;
+  font-size: 14pt;
+  border: solid 0.5px rgb(253, 253, 253);
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1;
+  margin-left: auto;
   margin-right: 20px;
 }
 
 .x{
   cursor: pointer;
   display: flex;
+  text-align: center;
+  text-decoration: none;
   width: 25px;
   height: 25px;
   justify-content: center;
+  align-items: center;
   border-radius: 50%;
-  background-color: rgba(37, 69, 248, 0.493)
+  color: rgb(222, 231, 240);
+  background-color: rgba(145, 159, 236, 0.493);
+  transition: .3s all;
+  &:hover{
+    color:rgb(222, 231, 240);
+  }
 }
 
-@import "ember-bootstrap/bootstrap";
+.cart-icon{
+  width: 4vh;
+  height: 4vh;
+  margin-right: 2vh;
+  transition: .3s all;
+  &:hover{
+    margin-right: 1vh;
+  }
+}
+
+.cart-container{
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5vh;
+}
+
+.total{
+  font-size: 2rem;
+}
+
+.empty-state{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+

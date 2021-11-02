@@ -1,14 +1,21 @@
 
 <div class="cart">
   <section class="products-cart">
+    {{#if this.cart.productsList.length}}
     {{#each this.cart.productsList as |selectedProduct|}}
     <article class="product-cart">
       <img class="img-detail" src={{selectedProduct.image}} alt={{selectedProduct.image}}/>
       <p>{{selectedProduct.name}}</p>
-      <input class="input-product" type="number" min="1" value={{selectedProduct.count}} {{on 'input' (fn this.addProductCount selectedProduct)}}>
+      <p>£ {{selectedProduct.price}}</p>
+      <input class="input-product" type="number" min="1" max="99" value={{selectedProduct.count}} {{on 'input' (fn this.addProductCount selectedProduct)}}>
       <span class="x" {{on 'click' (fn this.removeProduct selectedProduct)}}>X</span>
     </article>
     {{/each}}
+    {{else}}
+    <article class="product-cart">
+      <p class="empty-state">No products in cart</p>
+    </article>
+    {{/if  }}
   </section>
 
   <section>
@@ -16,9 +23,9 @@
       <p>Bought items: {{this.boughtItems}}</p>
       <p>Free tea: {{this.freeProduct}}</p>
       <p>Total items: {{this.itemsAmount}}</p>
-      <p>Discount: {{this.discountAmount}}</p>
-      <p>Total without discount: {{this.totalWithoutDiscount}}</p>
-      <p>Total with discount: {{this.totalWithDiscount}}</p>
+      <p>Discount: £ {{this.discountAmount}}</p>
+      <p>Total without discount: £ {{this.totalWithoutDiscount}}</p>
+      <p class="total">Total with discount: £ {{this.totalWithDiscount}}</p>
     </article>
   </section>
   </div>
