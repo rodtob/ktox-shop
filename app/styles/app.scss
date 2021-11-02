@@ -125,8 +125,17 @@ body{
 }
 
 .input-product{
-  margin-left: auto;
   margin-right: 20px;
+}
+
+.x{
+  cursor: pointer;
+  display: flex;
+  width: 25px;
+  height: 25px;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(37, 69, 248, 0.493)
 }
 
 @import "ember-bootstrap/bootstrap";

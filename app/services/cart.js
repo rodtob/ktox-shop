@@ -15,18 +15,17 @@ class cartProduct {
 
 export default class CartService extends Service {
   @tracked productsList = [];
+  @tracked freeTea = 0;
 
   greenTeaOffer(product) {
     if (product.id === 'GR1') {
-      let greenTea = this.productsList.find((e) => e.id === product.id);
-      greenTea.count += 1;
-      greenTea.price = 1.55;
-      console.log(this.productsList);
+      this.freeTea = product.count;
     }
   }
 
   addProductToCart(product) {
     const productInList = this.productsList.find((e) => e.id === product.id);
+    this.greenTeaOffer(product);
     if (productInList) {
       productInList.count += 1;
     } else {
@@ -43,6 +42,5 @@ export default class CartService extends Service {
   removeProductFromCart(product) {
     const newProductList = this.productsList.filter((e) => e.id !== product.id);
     this.productsList = [...newProductList];
-    console.log(this.productsList);
   }
 }

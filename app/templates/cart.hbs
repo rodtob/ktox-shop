@@ -6,15 +6,16 @@
       <img class="img-detail" src={{selectedProduct.image}} alt={{selectedProduct.image}}/>
       <p>{{selectedProduct.name}}</p>
       <input class="input-product" type="number" min="0" value={{selectedProduct.count}} {{on 'input' (fn this.addProductCount selectedProduct)}}>
-      <p {{on 'click' (fn this.removeProduct selectedProduct)}}>X</p>
+      <span class="x" {{on 'click' (fn this.removeProduct selectedProduct)}}>X</span>
     </article>
     {{/each}}
   </section>
 
   <section>
     <article class="purchase-cart">
-      <p>Total items {{this.itemsAmount}}</p>
-      <p>Total {{this.total}}</p>
+      <p>Free Green Tea: {{this.cart.freeTea}}</p>
+      <p>Total items: {{this.itemsAmount}}</p>
+      <p>Total: {{this.total}}</p>
     </article>
   </section>
   </div>
