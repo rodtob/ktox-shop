@@ -5,7 +5,7 @@
     {{#each this.cart.productsList as |selectedProduct|}}
     <article class="product-cart">
       <img class="img-detail" src={{selectedProduct.image}} alt={{selectedProduct.image}}/>
-      <p>{{selectedProduct.name}}</p>
+      <p class="name-in-cart">{{selectedProduct.name}}</p>
       <p>£ {{selectedProduct.price}}</p>
       <input class="input-product" type="number" min="1" max="99" value={{selectedProduct.count}} {{on 'input' (fn this.addProductCount selectedProduct)}}>
       <span class="x" {{on 'click' (fn this.removeProduct selectedProduct)}}>X</span>
