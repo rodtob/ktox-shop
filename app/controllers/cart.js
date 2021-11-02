@@ -6,9 +6,18 @@ export default class CartController extends Controller {
   @service cart;
   get itemsAmount() {
     return this.cart.productsList.reduce((accumulated, product) => {
-      return accumulated + product.count;
-    }, 0) + this.cart.freeTea;
+      console.log(product.freeProduct)
+      return accumulated + product.count + ( product.freeProduct || 0 );
+    }, 0);
   }
+
+  get freeProduct(){
+    return this.cart.productsList.reduce((accumulated, product) => {
+      console.log(product.freeProduct)
+      return accumulated + ( product.freeProduct || 0 );
+    }, 0);
+  }
+
   get boughtItems() {
     return this.cart.productsList.reduce((accumulated, product) => {
       return accumulated + product.count;

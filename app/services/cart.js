@@ -3,39 +3,43 @@ import { tracked } from '@glimmer/tracking';
 
 class cartProduct {
   @tracked count = 1;
+  @tracked freeProduct = 0;
 
-  constructor(id, name, price, image) {
+  constructor(id, name, price, image, count, freeProduct) {
     this.id = id;
     this.name = name;
     this.price = price;
     this.image = image;
-    this.count;
+    this.count = count;
+    this.freeProduct = freeProduct;
   }
 }
 
 export default class CartService extends Service {
   @tracked productsList = [];
-  @tracked freeTea = 0;
 
   greenTeaOffer(product) {
     if (product.id === 'GR1') {
-      this.freeTea = product.count;
+      console.log(product.count)
+      product.freeProduct = product.count;
     }
   }
 
   addProductToCart(product) {
     const productInList = this.productsList.find((e) => e.id === product.id);
-    this.greenTeaOffer(product);
     if (productInList) {
       productInList.count += 1;
+      this.greenTeaOffer(productInList);
     } else {
       const productWithCounter = new cartProduct(
         product.id,
         product.name,
         product.price,
         product.img,
-        product.count
+        product.count = 1,
+        product.freeProduct,
       );
+      this.greenTeaOffer(productWithCounter);
       this.productsList = [...this.productsList, productWithCounter];
     }
   }
