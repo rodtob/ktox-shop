@@ -20,7 +20,6 @@ export default class CartService extends Service {
 
   greenTeaOffer(product) {
     if (product.id === 'GR1') {
-      console.log(product.count)
       product.freeProduct = product.count;
     }
   }
@@ -36,8 +35,8 @@ export default class CartService extends Service {
         product.name,
         product.price,
         product.img,
-        product.count = 1,
-        product.freeProduct,
+        (product.count = 1),
+        product.freeProduct
       );
       this.greenTeaOffer(productWithCounter);
       this.productsList = [...this.productsList, productWithCounter];
