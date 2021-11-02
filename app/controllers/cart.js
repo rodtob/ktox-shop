@@ -10,28 +10,18 @@ export default class CartController extends Controller {
     }, 0) + this.cart.freeTea;
   }
   get total() {
+    let strawberryDiscount = (product) => product.id === 'SR1' && product.count >= 3;
+    let coffeDiscount = (product) => product.id === 'CF1' && product.count >= 3;
     return this.cart.productsList.reduce((accumulated, product) => {
-      if(product.id === 'SR1' && product.count >= 3 ){
+
         return (
-          Math.round(
-            (parseFloat(accumulated) +
-              parseFloat(product.count) * 4.5) *
-              100
-          ) / 100
-        ).toFixed(2);
-      } else if(product.id === 'CF1' && product.count >= 3){
-        return (
-          Math.round(
-            (parseFloat(accumulated) +
-              parseFloat(product.count) * (product.price*0.6)) *
-              100
-          ) / 100
-        ).toFixed(2);
-      }
-      return (
-        Math.round(
+        Math.round
           (parseFloat(accumulated) +
-            parseFloat(product.count) * product.price) *
+            parseFloat(product.count) * 
+            (strawberryDiscount(product) ? 4.5 :
+            (coffeDiscount(product) ?
+            product.price*0.66 :
+            product.price)) *
             100
         ) / 100
       ).toFixed(2);
