@@ -9,11 +9,15 @@ export default class CartController extends Controller {
       return accumulated + product.count;
     }, 0) + this.cart.freeTea;
   }
+  get boughtItems() {
+    return this.cart.productsList.reduce((accumulated, product) => {
+      return accumulated + product.count;
+    }, 0);
+  }
   get total() {
     let strawberryDiscount = (product) => product.id === 'SR1' && product.count >= 3;
     let coffeDiscount = (product) => product.id === 'CF1' && product.count >= 3;
     return this.cart.productsList.reduce((accumulated, product) => {
-
         return (
         Math.round
           (parseFloat(accumulated) +
