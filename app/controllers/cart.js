@@ -30,21 +30,34 @@ export default class CartController extends Controller {
     }, 0);
   }
 
-
   get totalWithDiscount() {
     let strawberryDiscount = (product) => product.id === 'SR1' && product.count >= 3;
     let coffeDiscount = (product) => product.id === 'CF1' && product.count >= 3;
     return this.cart.productsList.reduce((accumulated, product) => {
       return (
-          parseFloat(accumulated) +
-            parseFloat((product.count) *
-              (strawberryDiscount(product)
-                ? 4.5
-                : coffeDiscount(product)
-                ? product.price / 3 * 2
-                : product.price))
-      ).toFixed(2);
+        parseFloat(accumulated) +
+          parseFloat((product.count) *
+            (strawberryDiscount(product)
+              ? 4.5
+              : coffeDiscount(product)
+              ? product.price / 3 * 2
+              : product.price))
+    ).toFixed(2);
     }, 0);
+  }
+
+  @action
+  totalWithDiscountByProduct(product){
+    let strawberryDiscount = (product) => product.id === 'SR1' && product.count >= 3;
+    let coffeDiscount = (product) => product.id === 'CF1' && product.count >= 3;
+    let totalProducto = (parseFloat((product.count) *
+            (strawberryDiscount(product)
+              ? 4.5
+              : coffeDiscount(product)
+              ? product.price / 3 * 2
+              : product.price))
+    ).toFixed(2);
+    return totalProducto;
   }
 
   get discountAmount() {
