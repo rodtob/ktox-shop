@@ -7,4 +7,3 @@ function useControl([scope, fn]) {
 }
 
 export default helper(useControl);
-

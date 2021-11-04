@@ -6,8 +6,7 @@ export default class NavbarComponent extends Component {
 
   get itemCount() {
     return this.cart.productsList.reduce((total, item) => {
-      return total += item.count;
+      return (total += item.count);
     }, 0);
   }
-
 }

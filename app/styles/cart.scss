@@ -4,7 +4,7 @@
   justify-content: space-between;
   flex-direction: column;
   padding: 2vh;
-  width: 70%;
+  width: 75%;
   min-height: 60vh;
   background-color: rgb(206, 206, 206);
   -webkit-filter: drop-shadow(5px 5px 5px #222);
@@ -98,5 +98,6 @@
 }
 
 .price-in-cart{
-  width: 25%;
+  font-size: .9rem;
+  width: 30%;
 }

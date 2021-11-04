@@ -16,27 +16,30 @@ module('Unit | Service | cart', function (hooks) {
 
   test('add green Tea offer', function (assert) {
     let service = this.owner.lookup('service:cart');
-    let greenTea = { id: 'GR1'}
-    service.addProductToCart(greenTea)
-    assert.equal(service.productsList[0].freeProduct, 1, 'products list has freeTea');
+    let greenTea = { id: 'GR1' };
+    service.addProductToCart(greenTea);
+    assert.equal(
+      service.productsList[0].freeProduct,
+      1,
+      'products list has freeTea'
+    );
   });
 
   test('add the same product two times', function (assert) {
     let service = this.owner.lookup('service:cart');
-    let greenTea = { id: 'GR1'}
-    service.addProductToCart(greenTea)
+    let greenTea = { id: 'GR1' };
+    service.addProductToCart(greenTea);
     assert.equal(service.productsList[0].count, 1, 'count 1');
-    service.addProductToCart(greenTea)
+    service.addProductToCart(greenTea);
     assert.equal(service.productsList[0].count, 2, 'count 2');
   });
 
   test('add and remove item', function (assert) {
     let service = this.owner.lookup('service:cart');
-    let greenTea = { id: 'GR1'}
-    service.addProductToCart(greenTea)
+    let greenTea = { id: 'GR1' };
+    service.addProductToCart(greenTea);
     assert.equal(service.productsList[0].count, 1, 'count 1');
-    service.removeProductFromCart(greenTea)
+    service.removeProductFromCart(greenTea);
     assert.equal(service.productsList.length, 0, 'empty products list');
   });
-
 });
